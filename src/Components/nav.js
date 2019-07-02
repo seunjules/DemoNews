@@ -15,48 +15,48 @@ class Nav extends Component {
           <nav className="f6 fw6 ttu tracked">
             <a
               className="link dim white dib mr3"
-              title="projects"
-              name="projects"
+              title="Trending"
+              name="Trending"
               href = "#trending"
             >
               Trending
             </a>
             <a
               className="link dim white dib mr3"
-              title="work"
-              name="work"
+              title="Technology"
+              name="Technology"
               href = "#technology"
             >
               Technology
             </a>
             <a
               className="link dim white dib mr3"
-              title="about"
-              name="about"
+              title="Business"
+              name="Business"
               href = "#business"
             >
               Business
             </a>
             <a
               className="link dim white dib mr3"
-              title="contact"
-              name="contact"
+              title="Sports"
+              name="Sports"
               href = "#sports"
             >
               Sports
             </a>
             <a
               className="link dim white dib mr3"
-              title="home"
-              name="home"
+              title="Health"
+              name="Health"
               href = "#health"
             >
               Health
             </a>
             <a
               className="link dim white dib mr3"
-              title="home"
-              name="home"
+              title="Entertainment"
+              name="Entertainment"
               href = "#entertainment"
             >
               Entertainment

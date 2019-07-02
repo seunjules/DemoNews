@@ -10,7 +10,7 @@ class NewsCard extends Component {
         return ( 
             <div className = "cardContainer">
                 <img src = {this.props.src} alt = "Article Thumbnail" className = 'newsImg'/>
-                <p>{this.props.description}</p>
+                <p>{this.props.title}</p>
             </div>
         )
     }

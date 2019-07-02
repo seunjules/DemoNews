@@ -43,7 +43,7 @@ class FrontPage extends Component {
       ? this.state.topNews.articles.map((x, i) => {
           let date = new Date(x.publishedAt);
           return (
-            <div key={i}>
+            <div key={i} className = "headlineLink">
               <h3>{x.title}</h3>
               <p>
                 {date.toDateString()} | {x.source.name}
@@ -57,7 +57,7 @@ class FrontPage extends Component {
       ? this.state.techNews.articles.map((x, i) => {
           let date = new Date(x.publishedAt);
           return (
-            <div key={i}>
+            <div key={i} className = "headlineLink">
               <h3>{x.title}</h3>
               <p>
                 {date.toDateString()} | {x.source.name}
@@ -71,7 +71,7 @@ class FrontPage extends Component {
       ? this.state.businessNews.articles.map((x, i) => {
           let date = new Date(x.publishedAt);
           return (
-            <div key={i}>
+            <div key={i} className = "headlineLink">
               <h3>{x.title}</h3>
               <p>
                 {date.toDateString()} | {x.source.name}
@@ -85,7 +85,7 @@ class FrontPage extends Component {
       ? this.state.healthNews.articles.map((x, i) => {
           let date = new Date(x.publishedAt);
           return (
-            <div key={i}>
+            <div key={i} className = "headlineLink">
               <h3>{x.title}</h3>
               <p>
                 {date.toDateString()} | {x.source.name}
@@ -99,7 +99,7 @@ class FrontPage extends Component {
       ? this.state.entertainmentNews.articles.map((x, i) => {
           let date = new Date(x.publishedAt);
           return (
-            <div key={i}>
+            <div key={i} className = "headlineLink">
               <h3>{x.title}</h3>
               <p>
                 {date.toDateString()} | {x.source.name}
@@ -113,7 +113,7 @@ class FrontPage extends Component {
       ? this.state.sportsNews.articles.map((x, i) => {
           let date = new Date(x.publishedAt);
           return (
-            <div key={i}>
+            <div key={i} className = "headlineLink">
               <h3>{x.title}</h3>
               <p>
                 {date.toDateString()} | {x.source.name}
@@ -127,7 +127,7 @@ class FrontPage extends Component {
     const topSelectFeed = this.state.topNews.articles
       ? this.state.topNews.articles.slice(0,4).map((x, i) => {
             return (
-                <NewsCard src = {x.urlToImage} description = {x.description}/>
+                <NewsCard src = {x.urlToImage} title = {x.title}/>
             )
       })  
       : null;
@@ -135,7 +135,7 @@ class FrontPage extends Component {
       const techSelectFeed = this.state.techNews.articles
       ? this.state.techNews.articles.slice(0,4).map((x, i) => {
             return (
-                <NewsCard src = {x.urlToImage} description = {x.description}/>
+                <NewsCard src = {x.urlToImage} title = {x.title}/>
             )
       })  
       : null;
@@ -143,7 +143,7 @@ class FrontPage extends Component {
       const businessSelectFeed = this.state.businessNews.articles
       ? this.state.businessNews.articles.slice(0,4).map((x, i) => {
             return (
-                <NewsCard src = {x.urlToImage} description = {x.description}/>
+                <NewsCard src = {x.urlToImage} title = {x.title}/>
             )
       })  
       : null;
@@ -151,7 +151,7 @@ class FrontPage extends Component {
       const healthSelectFeed = this.state.healthNews.articles
       ? this.state.healthNews.articles.slice(0,4).map((x, i) => {
             return (
-                <NewsCard src = {x.urlToImage} description = {x.description}/>
+                <NewsCard src = {x.urlToImage} title = {x.title}/>
             )
       })  
       : null;
@@ -159,7 +159,7 @@ class FrontPage extends Component {
       const entertainmentSelectFeed = this.state.entertainmentNews.articles
       ? this.state.entertainmentNews.articles.slice(0,4).map((x, i) => {
             return (
-                <NewsCard src = {x.urlToImage} description = {x.description}/>
+                <NewsCard src = {x.urlToImage} title = {x.title}/>
             )
       })  
       : null;  
@@ -167,7 +167,7 @@ class FrontPage extends Component {
       const sportsSelectFeed = this.state.sportsNews.articles
       ? this.state.sportsNews.articles.slice(0,4).map((x, i) => {
             return (
-                <NewsCard src = {x.urlToImage} description = {x.description}/>
+                <NewsCard src = {x.urlToImage} title = {x.title}/>
             )
       })  
       : null;  
@@ -178,7 +178,8 @@ class FrontPage extends Component {
       <div>
         <div className="category top" id = "trending">
           <div className="topSection">
-            <h1>Top News</h1>
+            <h1>Trending News</h1>
+            <div>Pop up Section</div>
             <div className="headlineFeed">{topHeadlines}</div>
           </div>
 
@@ -187,6 +188,7 @@ class FrontPage extends Component {
         <div className="category top" id = "technology">
           <div className="topSection">
             <h1>Science and Technology</h1>
+            <div>Pop up Section</div>
             <div className="headlineFeed">{techHeadlines}</div>
           </div>
 
@@ -195,6 +197,7 @@ class FrontPage extends Component {
         <div className="category top" id = "business">
           <div className="topSection">
             <h1>Business</h1>
+            <div>Pop up Section</div>
             <div className="headlineFeed">{businessHeadlines}</div>
           </div>
 
@@ -203,6 +206,7 @@ class FrontPage extends Component {
         <div className="category top" id = "sports">
           <div className="topSection">
             <h1>Sports</h1>
+            <div>Pop up Section</div>
             <div className="headlineFeed">{sportsHeadlines}</div>
           </div>
 
@@ -211,6 +215,7 @@ class FrontPage extends Component {
         <div className="category top" id = "health">
           <div className="topSection">
             <h1>Health</h1>
+            <div>Pop up Section</div>
             <div className="headlineFeed">{healthHeadlines}</div>
           </div>
 
@@ -219,6 +224,7 @@ class FrontPage extends Component {
         <div className="category top" id = "entertainment">
           <div className="topSection">
             <h1>Entertainment</h1>
+            <div>Pop up Section</div>
             <div className="headlineFeed">{entertainmentHeadlines}</div>
           </div>
 

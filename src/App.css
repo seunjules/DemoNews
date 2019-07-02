@@ -22,13 +22,8 @@ body {
   width: 100%;
 }
 
-.headlineFeed {
-  overflow-y: scroll;
-  background:rgba(255,255,255, 0.2);
-  font-size: 1.3rem;
-  margin: 15px;
-  width: 50%;
-}
+
+
 
 h3 {
   padding: 0.3rem;
@@ -46,17 +41,43 @@ p {
   color: black;
   align-items: center;
   text-align: center;
-  background:rgba(255,255,255, 0.7);
-  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-  
+  background:rgba(255,255,255, 0.9);
+  -webkit-box-shadow: 2px 6px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 2px 6px 5px 0px rgba(0,0,0,0.75);
+box-shadow: 2px 6px 5px 0px rgba(0,0,0,0.75);
+  transition: all .2s ease-in-out; 
+}
+
+.cardContainer:hover {
+  transform: scale(1.1);
+}
+
+.headlineFeed {
+  overflow-y: scroll;
+  background:rgba(0, 0, 0, 0.4);
+  font-size: 1.3rem;
+  margin: 15px;
+  width: 50%;
+  color: white;
+}
+
+.headlineLink {
+  opacity: 0.8;
+}
+
+.headlineLink:hover {
+  opacity: 1;
 }
 
 .newsImg {
   height: 200px;
   width: 100%;
   
+}
+
+h1 {
+  margin: 5px;
+  padding: 5px;
 }
 
 .selectFeed {
