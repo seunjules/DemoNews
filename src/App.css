@@ -1,33 +1,103 @@
-.App {
-  text-align: center;
+html {
+  scroll-behavior: smooth;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-color: black;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.category{
+  height: 100vh;
   color: white;
+  min-width: 95vw;
+  font-weight: 500;
+  padding: 10px;
+  margin: 50px 0px 0px;
 }
 
-.App-link {
-  color: #61dafb;
+.topSection {
+  height: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.headlineFeed {
+  overflow-y: scroll;
+  background:rgba(255,255,255, 0.2);
+  font-size: 1.3rem;
+  margin: 15px;
+  width: 50%;
 }
+
+h3 {
+  padding: 0.3rem;
+  margin: 0.3rem;
+}
+
+p {
+  padding: 0.2rem;
+  margin: 0.2rem;
+}
+
+.cardContainer {
+  min-height: 30%;
+  width: 22vw;
+  color: black;
+  align-items: center;
+  text-align: center;
+  background:rgba(255,255,255, 0.7);
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  
+}
+
+.newsImg {
+  height: 200px;
+  width: 100%;
+  
+}
+
+.selectFeed {
+  display: flex;
+  flex-direction: row;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  justify-content: space-around;
+}
+
+.top {
+  padding: 120px 0px 0px 0px;
+}
+
+#trending {
+  background-image: url(./Components/topNews.jpg);
+  background-size: cover;
+}
+
+#technology {
+  background-image: url(./Components/tech.jpg);
+  background-size: cover;
+}
+
+#health {
+  background-image: url(./Components/health.jpg);
+  background-size: cover;
+}
+
+#sports {
+  background-image: url(./Components/sports.jpg);
+  background-size: cover;
+}
+
+#business {
+  background-image: url(./Components/business.jpg);
+  background-size: cover;
+}
+
+#entertainment {
+  background-image: url(./Components/entertainment.jpg);
+  background-size: cover;
+}
+
