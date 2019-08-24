@@ -123,8 +123,42 @@ header {
 
   nav {
       display: flex;
-      max-height: 10px;
+      /* max-height: 10px; */
       justify-content: center;
       text-align: center
       
+  }
+
+  .navContainer {
+    /* display: flex;
+    flex-direction: row; */
+    height: 100%;
+  }
+  
+  .fullHeight {
+      min-height: 100%;
+  }
+
+  .noPadding {
+      padding: 0;
+      margin: 0px 4px 0px 0px;
+      border: none;
+      background-color: white;
+  }
+
+  .search {
+    height: 18px;
+    width: auto;
+    padding: 0;
+    margin: 0;
+  }
+
+  .searchDiv {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+  }
+
+  .lightPadding {
+      padding: 3px 3px 3px 3px; 
   }

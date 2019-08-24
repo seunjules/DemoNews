@@ -1,0 +1,51 @@
+{
+  "name": "voluntary",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": "10.15.1"
+  },
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "bootstrap": "^4.3.1",
+    "charitynavigator-promise": "^1.0.2",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "file-system": "^2.2.2",
+    "knex": "^0.16.5",
+    "pg": "^7.10.0",
+    "react": "^16.8.6",
+    "react-bootstrap": "^1.0.0-beta.8",
+    "react-dom": "^16.8.6",
+    "react-redux": "^7.0.3",
+    "react-router-dom": "^5.0.0",
+    "react-scripts": "3.0.0",
+    "react-slick": "^0.24.0",
+    "redux": "^4.0.1",
+    "slick-carousel": "^1.8.1",
+    "testing": "^1.1.2",
+    "twit": "^2.2.11"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "build": "webpack"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "supertest": "^4.0.2"
+  }
+}
