@@ -22,6 +22,7 @@ import {
   BUSINESS
 } from "./constants";
 
+
 export const setSearchField = text => ({
   type: CHANGE_SEARCH_FIELD,
   payload: text
@@ -32,8 +33,8 @@ export const closeSearchView = () => ({
   });
 
 export const requestSearch = arg => dispatch => {
-  dispatch({ type: REQUEST_SEARCHNEWS_PENDING });
-  fetch("http://localhost:4000/search", {
+ dispatch({ type: REQUEST_SEARCHNEWS_PENDING });
+  return fetch("http://localhost:4000/search", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
@@ -51,7 +52,7 @@ export const requestSearch = arg => dispatch => {
 
 export const requestHeadlines = url => dispatch => {
   dispatch({ type: REQUEST_HEADLINES_PENDING });
-  fetch("http://localhost:4000/newsCategory", {
+  return fetch("http://localhost:4000/newsCategory", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -60,6 +61,7 @@ export const requestHeadlines = url => dispatch => {
     })
     .then(response => response.json())
     .then(response => {
+      console.log(response, url)
       switch (url) {
         case HEALTH:
           dispatch({ type: REQUEST_HEALTH_SUCCESS, payload: response.data });
@@ -75,7 +77,8 @@ export const requestHeadlines = url => dispatch => {
           dispatch({ type: REQUEST_ENTERTAINMENT_SUCCESS, payload: response.data });
           break;
         case TOP_NEWS:
-          dispatch({ type: REQUEST_HEADLINES_SUCCESS, payload: response.data });
+          console.log("I shall dispatch")
+         dispatch({ type: REQUEST_HEADLINES_SUCCESS, payload: response.data });
           break;
 
         case TECHNOLOGY:

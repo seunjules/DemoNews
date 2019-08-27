@@ -2,6 +2,9 @@ import configureMockStore from 'redux-mock-store'
 import thunk from 'redux-thunk'
 import fetchMock from 'fetch-mock'
 import expect from 'expect' 
+import { createLogger } from "redux-logger";
+
+const logger = createLogger();
 
 import {
     setSearchField,
@@ -19,7 +22,7 @@ import {
     CLOSE_SEARCH_VIEW,
   } from "../constants";
 
-  const middlewares = [thunk]
+const middlewares = [thunk, logger]
 const mockStore = configureMockStore(middlewares)
   
   describe('actions', () => {
@@ -48,34 +51,49 @@ const mockStore = configureMockStore(middlewares)
     })
   
     it('creates API call for requesting headlines news data ', () => {
-        fetchMock.getOnce('/todos', {
-          body: { todos: ['some data'] },
+        fetchMock.mock('http://localhost:4000/newsCategory', {
+          body: { data: "headlines" },
           headers: { 'content-type': 'application/json' }
         })
   
       const expectedActions = [
         { type: REQUEST_HEADLINES_PENDING },
-        { type: REQUEST_HEADLINES_SUCCESS, payload: { todos: ['some data'] } }
+        { type: REQUEST_HEADLINES_SUCCESS, payload: "headlines"  }
       ]
-      const store = mockStore({ todos: [] })
+      const store = mockStore({ isPending: false,
+        headlines: [],
+        healthHeadlines: [],
+        businessHeadlines: [],
+        sportsHeadlines: [],
+        entertaimentHeadlines: [],
+        technologyHeadlines: [],
+        error: "" })
+    
   
-      return store.dispatch(requestHeadlines('/todos')).then(() => { 
+      return store.dispatch(requestHeadlines("https://newsapi.org/v2/top-headlines?country=us&language=en&apiKey=fe70ebfecd2948d797f65db1b7d70bf3")).then(() => { 
         // return of async actions
         expect(store.getActions()).toEqual(expectedActions)
       })
     })
 
     it('creates API call for requesting search news data ', () => {
-        fetchMock.getOnce('/todos', {
-          body: { todos: ['some data'] },
+        fetchMock.mock('http://localhost:4000/search', {
+          body: { data: 'searchResults' },
           headers: { 'content-type': 'application/json' }
         })
   
       const expectedActions = [
         { type: REQUEST_SEARCHNEWS_PENDING },
-        { type: REQUEST_SEARCHNEWS_SUCCESS, payload: { todos: ['some data'] } }
+        { type: REQUEST_SEARCHNEWS_SUCCESS, payload: "searchResults" }
       ]
-      const store = mockStore({ todos: [] })
+      const store = mockStore({ isPending: false,
+        headlines: [],
+        healthHeadlines: [],
+        businessHeadlines: [],
+        sportsHeadlines: [],
+        entertaimentHeadlines: [],
+        technologyHeadlines: [],
+        error: "" })
   
       return store.dispatch(requestSearch()).then(() => {
         // return of async actions
