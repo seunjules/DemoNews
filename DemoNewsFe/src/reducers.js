@@ -3,11 +3,6 @@ import {
   REQUEST_HEADLINES_PENDING,
   REQUEST_HEADLINES_SUCCESS,
   REQUEST_HEADLINES_FAILED,
-  REQUEST_HEALTH_SUCCESS,
-  REQUEST_BUSINESS_SUCCESS,
-  REQUEST_SPORTS_SUCCESS,
-  REQUEST_ENTERTAINMENT_SUCCESS,
-  REQUEST_TECHNOLOGY_SUCCESS,
   REQUEST_SEARCHNEWS_PENDING,
   REQUEST_SEARCHNEWS_SUCCESS,
   REQUEST_SEARCHNEWS_FAILED,
@@ -78,36 +73,6 @@ export const requestHeadlines = (
       return Object.assign({}, state, {
         ispending: false,
         headlines: action.payload
-      });
-
-    case REQUEST_HEALTH_SUCCESS:
-      return Object.assign({}, state, {
-        ispending: false,
-        healthHeadlines: action.payload
-      });
-
-    case REQUEST_BUSINESS_SUCCESS:
-      return Object.assign({}, state, {
-        ispending: false,
-        businessHeadlines: action.payload
-      });
-
-    case REQUEST_SPORTS_SUCCESS:
-      return Object.assign({}, state, {
-        ispending: false,
-        sportsHeadlines: action.payload
-      });
-
-    case REQUEST_ENTERTAINMENT_SUCCESS:
-      return Object.assign({}, state, {
-        ispending: false,
-        entertaimentHeadlines: action.payload
-      });
-
-    case REQUEST_TECHNOLOGY_SUCCESS:
-      return Object.assign({}, state, {
-        ispending: false,
-        technologyHeadlines: action.payload
       });
 
     case REQUEST_HEADLINES_FAILED:

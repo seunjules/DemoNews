@@ -1,14 +1,6 @@
 import React, { Component } from "react";
 import NewsCard from "../Components/NewsCard.js";
 import { connect } from "react-redux";
-import {
-  TOP_NEWS,
-  TECHNOLOGY,
-  BUSINESS,
-  SPORTS,
-  ENTERTAINMENT,
-  HEALTH
-} from "../constants";
 import { mapStateToProps, mapDispatchToProps } from "../util";
 
 class FrontPage extends Component {
@@ -16,18 +8,18 @@ class FrontPage extends Component {
     super(props);
   }
   async componentDidMount() {
-    this.props.onRequestHeadlines(TOP_NEWS);
-    this.props.onRequestHeadlines(TECHNOLOGY);
-    this.props.onRequestHeadlines(BUSINESS);
-    this.props.onRequestHeadlines(SPORTS);
-    this.props.onRequestHeadlines(ENTERTAINMENT);
-    this.props.onRequestHeadlines(HEALTH);
+    this.props.onRequestHeadlines();
+    // this.props.onRequestHeadlines(TECHNOLOGY);
+    // this.props.onRequestHeadlines(BUSINESS);
+    // this.props.onRequestHeadlines(SPORTS);
+    // this.props.onRequestHeadlines(ENTERTAINMENT);
+    // this.props.onRequestHeadlines(HEALTH);
   }
 
   render() {
-    console.log(this.props)
-    const topHeadlines = this.props.headlines.articles
-      ? this.props.headlines.articles.map((x, i) => {
+    console.log(this.props.headlines)
+    const topHeadlines = this.props.headlines.topNews
+      ? this.props.headlines.topNews.articles.map((x, i) => {
           let date = new Date(x.publishedAt);
           return (
             <div key={i} className="headlineLink">
@@ -40,8 +32,8 @@ class FrontPage extends Component {
         })
       : null;
 
-    const techHeadlines = this.props.technologyHeadlines.articles
-      ? this.props.technologyHeadlines.articles.map((x, i) => {
+    const techHeadlines = this.props.headlines.technology
+      ? this.props.headlines.technology.articles.map((x, i) => {
           let date = new Date(x.publishedAt);
           return (
             <div key={i} className="headlineLink">
@@ -54,8 +46,8 @@ class FrontPage extends Component {
         })
       : null;
 
-    const businessHeadlines = this.props.businessHeadlines.articles
-      ? this.props.businessHeadlines.articles.map((x, i) => {
+    const businessHeadlines = this.props.headlines.business
+      ? this.props.headlines.business.articles.map((x, i) => {
           let date = new Date(x.publishedAt);
           return (
             <div key={i} className="headlineLink">
@@ -68,8 +60,8 @@ class FrontPage extends Component {
         })
       : null;
 
-    const healthHeadlines = this.props.healthHeadlines.articles
-      ? this.props.healthHeadlines.articles.map((x, i) => {
+    const healthHeadlines = this.props.headlines.health
+      ? this.props.headlines.health.articles.map((x, i) => {
           let date = new Date(x.publishedAt);
           return (
             <div key={i} className="headlineLink">
@@ -82,8 +74,8 @@ class FrontPage extends Component {
         })
       : null;
 
-    const entertainmentHeadlines = this.props.entertaimentHeadlines.articles
-      ? this.props.entertaimentHeadlines.articles.map((x, i) => {
+    const entertainmentHeadlines = this.props.headlines.entertainment
+      ? this.props.headlines.entertainment.articles.map((x, i) => {
           let date = new Date(x.publishedAt);
           return (
             <div key={i} className="headlineLink">
@@ -96,8 +88,8 @@ class FrontPage extends Component {
         })
       : null;
 
-    const sportsHeadlines = this.props.sportsHeadlines.articles
-      ? this.props.sportsHeadlines.articles.map((x, i) => {
+    const sportsHeadlines = this.props.headlines.sports
+      ? this.props.headlines.sports.articles.map((x, i) => {
           let date = new Date(x.publishedAt);
           return (
             <div key={i} className="headlineLink">

@@ -3,15 +3,27 @@ var cors = require("cors");
 const bodyParser = require("body-parser");
 const app = express();
 const fetch = require("node-fetch");
-
+const constants = require("./constants");
 
 app.use(cors());
 app.use(bodyParser.json());
 
 app.post("/newsCategory", async (req, res) => {
+  console.log("hit this endpoint", typeof(constants.TOP_NEWS) )
   let url = req.body.url;
-  let data = await getData(url);
-  res.send({data
+  let topNews = await getData(constants.TOP_NEWS);
+  let business = await getData(constants.BUSINESS);
+  let sports = await getData(constants.SPORTS);
+  let health = await getData(constants.HEALTH);
+  let entertainment = await getData(constants.ENTERTAINMENT);
+  let technology = await getData(constants.TECHNOLOGY);
+  res.send({
+    topNews: topNews,
+    business: business,
+    sports: sports,
+    health: health,
+    entertainment: entertainment,
+    technology: technology
   });
 });
 
@@ -36,4 +48,4 @@ const getData = async url => {
   }
 };
 
-app.listen(process.env.PORT || 5000);
+app.listen(process.env.PORT || 4000);
