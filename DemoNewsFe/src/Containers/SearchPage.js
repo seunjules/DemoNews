@@ -4,9 +4,6 @@ import { connect } from "react-redux";
 import { mapStateToProps, mapDispatchToProps } from "../util";
 
 class SearchPage extends Component {
-  constructor(props) {
-    super(props);
-  }
 
   render() {
     const searchSelectFeed = this.props.searchNewsResponse.articles

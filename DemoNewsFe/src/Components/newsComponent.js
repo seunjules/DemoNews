@@ -1,14 +1,9 @@
 import React, { Component } from "react";
 import NewsCard from "../Components/NewsCard.js";
-import { connect } from "react-redux";
-import { mapStateToProps, mapDispatchToProps } from "../util";
+
 
 class NewsComp extends Component {
-  constructor(props) {
-    super(props);
-  }
-  
-  
+
 
   render() {
     console.log(this.props.headlines, "where am I")

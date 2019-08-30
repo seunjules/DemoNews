@@ -1,13 +1,10 @@
 import React, { Component } from "react";
-import NewsCard from "../Components/NewsCard.js";
 import { connect } from "react-redux";
 import { mapStateToProps, mapDispatchToProps } from "../util";
 import NewsComp from "../Components/newsComponent"
 
 class FrontPage extends Component {
-  constructor(props) {
-    super(props);
-  }
+
   async componentDidMount() {
     this.props.onRequestHeadlines();
   }

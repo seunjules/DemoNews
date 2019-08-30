@@ -7,10 +7,6 @@ import "../style/App.css";
 import { mapStateToProps, mapDispatchToProps } from "../util";
 
 class App extends Component {
-  constructor() {
-    super();
-
-  }
 
   render() {
     return (
