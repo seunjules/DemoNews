@@ -7,6 +7,9 @@ import "../style/App.css";
 import { mapStateToProps, mapDispatchToProps } from "../util";
 
 class App extends Component {
+  componentDidMount() {
+    this.props.onRequestHeadlines();
+  }
 
   render() {
     return (

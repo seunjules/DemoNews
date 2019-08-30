@@ -1,25 +1,22 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { mapStateToProps, mapDispatchToProps } from "../util";
-import NewsComp from "../Components/newsComponent"
+import NewsComp from "../Components/newsComponent";
 
 class FrontPage extends Component {
-
-  async componentDidMount() {
-    this.props.onRequestHeadlines();
-  }
+  
 
   render() {
- 
 
+    const { headlines } = this.props
     return (
       <div>
-       <NewsComp headlines = {this.props.headlines.topNews}/>
-       <NewsComp headlines = {this.props.headlines.technology}/>
-       <NewsComp headlines = {this.props.headlines.business}/>
-       <NewsComp headlines = {this.props.headlines.health}/>
-       <NewsComp headlines = {this.props.headlines.entertainment}/>
-       <NewsComp headlines = {this.props.headlines.sports}/>
+        <NewsComp headlines = { headlines.topNews } />
+        <NewsComp headlines = { headlines.technology } />
+        <NewsComp headlines = { headlines.business } />
+        <NewsComp headlines = { headlines.health } />
+        <NewsComp headlines = { headlines.entertainment } />
+        <NewsComp headlines = { headlines.sports } />
       </div>
     );
   }

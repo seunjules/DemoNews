@@ -1,14 +1,12 @@
 import React, { Component } from "react";
 import NewsCard from "../Components/NewsCard.js";
 
-
 class NewsComp extends Component {
-
-
   render() {
- 
-    const headlines = this.props.headlines
-      ? this.props.headlines.articles.map((x, i) => {
+    const { headlines } = this.props
+    if(!headlines) return null; 
+    
+    const headlinesList = headlines.articles.map((x, i) => {
           let date = new Date(x.publishedAt);
           return (
             <div key={i} className="headlineLink">
@@ -19,23 +17,18 @@ class NewsComp extends Component {
             </div>
           );
         })
-      : null;
+      
 
-
-    const selectFeed = this.props.headlines
-      ? this.props.headlines.articles.slice(0, 4).map((x, i) => {
+    const selectFeed = headlines.articles.slice(0, 4).map((x, i) => {
           return <NewsCard src={x.urlToImage} title={x.title} />;
         })
-      : null;
-
+      
 
     return (
       <div>
-        <div className="category top" id="entertainment">
+        <div className="category top">
           <div className="topSection">
-            <h1>Entertainment</h1>
-            <div>Pop up Section</div>
-            <div className="headlineFeed">{headlines}</div>
+            <div className="headlineFeed">{headlinesList}</div>
           </div>
 
           <div className="selectFeed">{selectFeed}</div>

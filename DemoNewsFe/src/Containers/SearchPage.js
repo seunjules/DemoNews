@@ -4,17 +4,17 @@ import { connect } from "react-redux";
 import { mapStateToProps, mapDispatchToProps } from "../util";
 
 class SearchPage extends Component {
-
   render() {
-    const searchSelectFeed = this.props.searchNewsResponse.articles
-      ? this.props.searchNewsResponse.articles.map((x, i) => {
+    const { searchNewsResponse, onCloseSearch } = this.props;
+    const searchSelectFeed = searchNewsResponse.articles
+      ? searchNewsResponse.articles.map((x, i) => {
           return <NewsCard src={x.urlToImage} title={x.title} />;
         })
       : null;
 
     return (
       <div className="lightPadding category">
-        <button onClick={this.props.onCloseSearch} className="closeButton">
+        <button onClick={onCloseSearch} className="closeButton">
           X
         </button>
         <div className="searchFeed">{searchSelectFeed}</div>
