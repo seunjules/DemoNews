@@ -58,7 +58,7 @@ const mockStore = configureMockStore(middlewares)
   
       const expectedActions = [
         { type: REQUEST_HEADLINES_PENDING },
-        { type: REQUEST_HEADLINES_SUCCESS, payload: "headlines"  }
+        { type: REQUEST_HEADLINES_SUCCESS, payload: { data: "headlines" }  }
       ]
       const store = mockStore({ isPending: false,
         headlines: [],

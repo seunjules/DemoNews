@@ -12,14 +12,14 @@ export const mapStateToProps = state => {
     searchNewsResponse: state.searchNews.searchNewsResponse,
     displayFrontPage: state.searchNews.displayFrontPage,
     displaySearchPage: state.searchNews.displaySearchPage,
-    headlines: state.requestHeadlines.headlines,
-    healthHeadlines: state.requestHeadlines.healthHeadlines,
-    businessHeadlines: state.requestHeadlines.businessHeadlines,
-    sportsHeadlines: state.requestHeadlines.sportsHeadlines,
-    entertaimentHeadlines: state.requestHeadlines.entertaimentHeadlines,
-    technologyHeadlines: state.requestHeadlines.technologyHeadlines,
-    isPending: state.requestHeadlines.isPending,
-    error: state.requestHeadlines.headlines
+    headlines: state.getHeadlines.headlines,
+    healthHeadlines: state.getHeadlines.healthHeadlines,
+    businessHeadlines: state.getHeadlines.businessHeadlines,
+    sportsHeadlines: state.getHeadlines.sportsHeadlines,
+    entertaimentHeadlines: state.getHeadlines.entertaimentHeadlines,
+    technologyHeadlines: state.getHeadlines.technologyHeadlines,
+    isPending: state.getHeadlines.isPending,
+    error: state.getHeadlines.headlines
   };
 };
 

@@ -20,6 +20,7 @@ export const closeSearchView = () => ({
 });
 
 export const requestSearch = arg => dispatch => {
+  console.log("i am running from test other one")
   dispatch({ type: REQUEST_SEARCHNEWS_PENDING });
   return fetch("http://localhost:4000/search", {
     method: "POST",
@@ -38,6 +39,7 @@ export const requestSearch = arg => dispatch => {
 };
 
 export const requestHeadlines = url => dispatch => {
+  console.log("i am running from test")
   dispatch({ type: REQUEST_HEADLINES_PENDING });
   return fetch("http://localhost:4000/newsCategory", {
     method: "POST",
@@ -48,8 +50,6 @@ export const requestHeadlines = url => dispatch => {
   })
     .then(response => response.json())
     .then(response => {
-      console.log(response, url);
-
       dispatch({ type: REQUEST_HEADLINES_SUCCESS, payload: response });
     })
     .catch(error =>

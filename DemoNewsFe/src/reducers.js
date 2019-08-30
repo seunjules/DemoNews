@@ -19,14 +19,17 @@ const initialStateSearch = {
 };
 
 export const searchNews = (state = initialStateSearch, action = {}) => {
+  console.log(action)
   switch (action.type) {
     case CHANGE_SEARCH_FIELD:
       return Object.assign({}, state, { searchField: action.payload });
 
     case REQUEST_SEARCHNEWS_PENDING:
+      console.log("pendindg is running")
       return Object.assign({}, state, { isPending: true });
 
     case REQUEST_SEARCHNEWS_SUCCESS:
+      console.log(action.payload)
       return Object.assign({}, state, {
         isPending: false,
         searchNewsResponse: action.payload,
@@ -61,23 +64,26 @@ const initialStateHeadlines = {
   error: ""
 };
 
-export const requestHeadlines = (
+export const getHeadlines = (
   state = initialStateHeadlines,
   action = {}
 ) => {
+  console.log(action)
   switch (action.type) {
     case REQUEST_HEADLINES_PENDING:
+      console.log("i should dispatch")
       return Object.assign({}, state, { isPending: true });
 
     case REQUEST_HEADLINES_SUCCESS:
+      console.log("i am running count**********************")
       return Object.assign({}, state, {
-        ispending: false,
+        isPending: false,
         headlines: action.payload
       });
 
     case REQUEST_HEADLINES_FAILED:
       return Object.assign({}, state, {
-        ispending: false,
+        isPending: false,
         error: action.payload
       });
 
