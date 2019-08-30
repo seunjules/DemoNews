@@ -6,7 +6,7 @@ class NewsComp extends Component {
 
 
   render() {
-    console.log(this.props.headlines, "where am I")
+ 
     const headlines = this.props.headlines
       ? this.props.headlines.articles.map((x, i) => {
           let date = new Date(x.publishedAt);
