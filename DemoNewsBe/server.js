@@ -30,7 +30,7 @@ app.post("/newsCategory", async (req, res) => {
 app.post("/search", async (req, res) => {
   let arg = req.body.arg;
   let data = await getData(
-    `https://newsapi.org/v2/everything?q=${arg}&sortBy=publishedAt&language=en&apiKey=482b27cd68214d98923d7f4b13d4db6b`
+    `https://newsapi.org/v2/everything?q=${arg}&sortBy=publishedAt&language=en&apiKey=3723cb47ab78409e903574452baf3eb3`
   );
   res.json({
     data: data,

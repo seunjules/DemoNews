@@ -6,13 +6,14 @@ import NewsComp from "../Components/newsComponent";
 const FrontPage = props => {
   const { headlines } = props;
   return (
-    <div>
-      <NewsComp headlines={headlines.topNews} />
-      <NewsComp headlines={headlines.technology} />
-      <NewsComp headlines={headlines.business} />
-      <NewsComp headlines={headlines.health} />
-      <NewsComp headlines={headlines.entertainment} />
-      <NewsComp headlines={headlines.sports} />
+    <div className = "frontPageContainer">
+      <div id ="trending"><NewsComp headlines={headlines.topNews} title = "Top Stories"/></div>
+      <div id ="technology"> <NewsComp headlines={headlines.technology} title = "Technology"/></div>
+      <div id ="business"> <NewsComp headlines={headlines.business} title = "Business"/></div>
+      <div id ="health"><NewsComp headlines={headlines.health} title = "Health" /></div>
+      <div id ="entertainment"> <NewsComp headlines={headlines.entertainment} title = "Entertainment"/></div>
+      <div id ="sports">
+      <NewsComp headlines={headlines.sports} title = "Sports" /></div>
     </div>
   );
 };

@@ -72,7 +72,7 @@ const Nav = props => {
               src={search}
               alt="search button"
               className="search"
-              onClick={() => this.props.onRequestSearch(props.searchField)}
+              onClick={() => props.onRequestSearch(props.searchField)}
             />
           </button>
         </header>
