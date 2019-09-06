@@ -1,14 +1,14 @@
-import React, { Component } from "react";
+import React from "react";
 
-class NewsCard extends Component {
-  render() {
+const NewsCard = props => {
+
     return (
       <div className="cardContainer">
-        <img src={this.props.src} alt="Article Thumbnail" className="newsImg" />
-        <p>{this.props.title}</p>
+        <img src={props.src} alt="Article Thumbnail" className="newsImg" />
+        <p>{props.title}</p>
       </div>
     );
   }
-}
+
 
 export default NewsCard;
