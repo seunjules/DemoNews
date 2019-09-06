@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import { connect } from "react-redux";
 import FrontPage from "./FrontPage";
 import SearchPage from "./SearchPage";
@@ -6,17 +6,23 @@ import Nav from "../Components/nav";
 import "../style/App.css";
 import { mapStateToProps, mapDispatchToProps } from "../util";
 
-const App = props => {
-  props.onRequestHeadlines();
+class App extends Component {
+  componentDidMount = () => {
+    this.props.onRequestHeadlines();
+  };
 
-  return (
-    <div className="App">
-      <Nav />
-      {props.displayFrontPage ? <FrontPage /> : null}
-      {props.displaySearchPage ? <SearchPage /> : null}
-    </div>
-  );
-};
+  render() {
+
+    const {displayFrontPage, displaySearchPage } = this.props
+    return (
+      <div className="App">
+        <Nav />
+        {displayFrontPage ? <FrontPage /> : null}
+        {displaySearchPage ? <SearchPage /> : null}
+      </div>
+    );
+  }
+}
 
 export default connect(
   mapStateToProps,
