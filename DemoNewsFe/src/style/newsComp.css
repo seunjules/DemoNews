@@ -1,0 +1,28 @@
+.category {
+    min-height: 100vh;
+    color: white;
+    font-weight: 500;
+    padding: 50px;
+    margin: 30px;
+}
+
+.topSection {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 98vw;
+    padding: 10px;
+    flex-wrap: wrap;
+}
+
+.headlineFeed {
+    margin: 10px;
+    overflow-y: scroll;
+    background: #4b4c4c;
+    width: 20vw;
+    min-width: 400px;
+    height: 23.5vw;
+    color: white;
+    position: relative;
+}
+

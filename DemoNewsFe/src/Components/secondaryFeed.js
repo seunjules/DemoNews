@@ -1,5 +1,6 @@
 import React from "react";
 import NewsCard from "../Components/NewsCard.js";
+import "../style/secondaryFeed.css";
 
 const SecondaryFeed = props => {
   const { headlines, onOpenArticle } = props;
@@ -19,9 +20,7 @@ const SecondaryFeed = props => {
   });
 
   return (
-    <div>
         <div className="secondaryFeed">{secondaryFeed}</div>
-    </div>
   );
 };
 

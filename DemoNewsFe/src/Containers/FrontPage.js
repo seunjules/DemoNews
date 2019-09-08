@@ -17,7 +17,6 @@ const FrontPage = props => {
         />
       </div>
       <div id="technology">
-        {" "}
         <NewsComp
           headlines={headlines.technology}
           title="Technology"
@@ -25,7 +24,6 @@ const FrontPage = props => {
         />
       </div>
       <div id="business">
-        {" "}
         <NewsComp
           headlines={headlines.business}
           title="Business"
@@ -40,7 +38,6 @@ const FrontPage = props => {
         />
       </div>
       <div id="entertainment">
-        {" "}
         <NewsComp
           headlines={headlines.entertainment}
           title="Entertainment"

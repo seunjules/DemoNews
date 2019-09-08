@@ -4,47 +4,12 @@ import BannerCard from "../Components/BannerCard.js";
 import SelectFeed from "./selectFeed.js";
 import SecondaryFeed from "./secondaryFeed.js";
 import HeadLineList from "./headLineList.js";
+import "../style/newsComp.css";
 
 const NewsComp = props => {
   const { headlines, onOpenArticle } = props;
 
   if (!headlines) return null;
-
-  const headlinesList = headlines.articles.map((x, i) => {
-    let date = new Date(x.publishedAt);
-    return (
-      <div key={i} className="headlineLink">
-        <h3>{x.title}</h3>
-        <p>
-          {date.toDateString()} | {x.source.name}
-        </p>
-      </div>
-    );
-  });
-
-  const selectFeed = headlines.articles.slice(1, 5).map((x, i) => {
-    return (
-      <NewsCard
-        src={x.urlToImage}
-        title={x.title}
-        content={x.content}
-        url={x.url}
-        onOpenArticle={() => onOpenArticle(x)}
-      />
-    );
-  });
-
-  const secondaryFeed = headlines.articles.slice(5, 7).map((x, i) => {
-    return (
-      <NewsCard
-        src={x.urlToImage}
-        title={x.title}
-        content={x.content}
-        url={x.url}
-        onOpenArticle={() => onOpenArticle(x)}
-      />
-    );
-  });
 
   return (
     <div>
@@ -56,24 +21,26 @@ const NewsComp = props => {
             title={headlines.articles[0].title}
             content={headlines.articles[0].content}
             url={headlines.articles[0].url}
-            onOpenArticle={() => onOpenArticle(headlines.articles[0])}
+            onOpenArticle={onOpenArticle}
           />
           <div className="secondaryFeed">
             <SecondaryFeed
               headlines={props.headlines}
-              onOpenArticle={props.onOpenArticle}
+              onOpenArticle={onOpenArticle}
             />
           </div>
-          <div className="headlineFeed"><HeadLineList
+          <div className="headlineFeed">
+            <HeadLineList
               headlines={props.headlines}
-              onOpenArticle={props.onOpenArticle}
-            /></div>
+              onOpenArticle={onOpenArticle}
+            />
+          </div>
         </div>
 
         <div className="selectFeed">
           <SelectFeed
             headlines={props.headlines}
-            onOpenArticle={props.onOpenArticle}
+            onOpenArticle={onOpenArticle}
           />
         </div>
       </div>

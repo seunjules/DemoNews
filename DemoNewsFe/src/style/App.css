@@ -1,8 +1,12 @@
-html {
+ html {
   scroll-behavior: smooth;
 }
 
-body {
+h1 {
+  color: black;
+}
+
+/* body {
   background-color: white;
 
 }
@@ -40,7 +44,7 @@ p {
 }
 
 .cardContainer {
-  /* min-height: 30%; */
+  
   width: 22vw;
   color: black;
   align-items: center;
@@ -48,11 +52,11 @@ p {
   background: rgba(255, 255, 255, 0.9);
   box-shadow: 2px 6px 5px 0px rgba(0, 0, 0, 0.75);
   transition: all .2s ease-in-out;
-  /* height: 22vw; */
+  
   flex-wrap: wrap;
   width: 22.3vw;
   min-width: 400px;
-  /* display: flex; */
+  
   margin: 10px;
 }
 
@@ -225,4 +229,4 @@ input {
   background-color: white;
   margin: 10px;
 
-}
+}  */
