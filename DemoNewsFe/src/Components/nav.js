@@ -2,6 +2,7 @@ import React from "react";
 import search from "../images/search.png";
 import { connect } from "react-redux";
 import { mapStateToProps, mapDispatchToProps } from "../util";
+import { Link } from 'react-router-dom'
 import "../style/nav.css";
 
 const Nav = props => {
@@ -68,12 +69,12 @@ const Nav = props => {
             onChange={props.onSearchChange}
           ></input>
           <button className="noPadding">
-            <img
+           <Link to ="/searchPage"> <img
               src={search}
               alt="search button"
               className="search"
               onClick={() => props.onRequestSearch(props.searchField)}
-            />
+            /></Link>
           </button>
         </header>
       </div>

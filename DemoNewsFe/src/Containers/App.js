@@ -2,9 +2,11 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import FrontPage from "./FrontPage";
 import SearchPage from "./SearchPage";
+import NewsPage from "./NewsPage";
 import Nav from "../Components/nav";
 import "../style/App.css";
 import { mapStateToProps, mapDispatchToProps } from "../util";
+import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
 
 class App extends Component {
   componentDidMount = () => {
@@ -13,13 +15,14 @@ class App extends Component {
 
   render() {
 
-    const {displayFrontPage, displaySearchPage } = this.props
     return (
+      <Router>
       <div className="App">
-        <Nav />
-        {displayFrontPage ? <FrontPage /> : null}
-        {displaySearchPage ? <SearchPage /> : null}
+        <Route exact path='/' component={FrontPage} />
+        <Route path='/SearchPage' component={SearchPage} />
+        <Route path='/NewsPage' component={NewsPage} />
       </div>
+      </Router>
     );
   }
 }

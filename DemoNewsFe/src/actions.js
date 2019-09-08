@@ -7,6 +7,7 @@ import {
   REQUEST_SEARCHNEWS_SUCCESS,
   REQUEST_SEARCHNEWS_FAILED,
   CLOSE_SEARCH_VIEW,
+  OPEN_NEWS_ARTICLE,
 
 } from "./constants";
 
@@ -15,13 +16,19 @@ export const setSearchField = text => ({
   payload: text
 });
 
+export const openArticle = (obj) => ({
+  type: OPEN_NEWS_ARTICLE,
+  payload: obj,
+});
+
 export const closeSearchView = () => ({
   type: CLOSE_SEARCH_VIEW
 });
 
 export const requestSearch = arg => dispatch => {
-  console.log("i am running from test other one")
+
   dispatch({ type: REQUEST_SEARCHNEWS_PENDING });
+  
   return fetch("http://localhost:4000/search", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -39,7 +46,7 @@ export const requestSearch = arg => dispatch => {
 };
 
 export const requestHeadlines = url => dispatch => {
-  console.log("i am running from test")
+
   dispatch({ type: REQUEST_HEADLINES_PENDING });
   return fetch("http://localhost:4000/newsCategory", {
     method: "POST",

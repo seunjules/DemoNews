@@ -6,8 +6,25 @@ import {
   REQUEST_SEARCHNEWS_PENDING,
   REQUEST_SEARCHNEWS_SUCCESS,
   REQUEST_SEARCHNEWS_FAILED,
-  CLOSE_SEARCH_VIEW
+  CLOSE_SEARCH_VIEW,
+  OPEN_NEWS_ARTICLE
 } from "./constants";
+
+const initialStateNewsPage = {
+  initialStateNewsPage: [],
+};
+
+export const openNewsPage = ((state = initialStateNewsPage, action = {}) => {
+  console.log("i am running")
+  switch (action.type) {
+    case OPEN_NEWS_ARTICLE:
+      return Object.assign({}, state, { activeNewsArticle: action.payload });
+    
+    default:
+      return state;
+  }
+
+})
 
 const initialStateSearch = {
   searchField: "",
@@ -19,17 +36,17 @@ const initialStateSearch = {
 };
 
 export const searchNews = (state = initialStateSearch, action = {}) => {
-  console.log(action)
+  
   switch (action.type) {
     case CHANGE_SEARCH_FIELD:
       return Object.assign({}, state, { searchField: action.payload });
 
     case REQUEST_SEARCHNEWS_PENDING:
-      console.log("pendindg is running")
+      
       return Object.assign({}, state, { isPending: true });
 
     case REQUEST_SEARCHNEWS_SUCCESS:
-      console.log(action.payload)
+      
       return Object.assign({}, state, {
         isPending: false,
         searchNewsResponse: action.payload,
@@ -68,14 +85,14 @@ export const getHeadlines = (
   state = initialStateHeadlines,
   action = {}
 ) => {
-  console.log(action)
+  
   switch (action.type) {
     case REQUEST_HEADLINES_PENDING:
-      console.log("i should dispatch")
+    
       return Object.assign({}, state, { isPending: true });
 
     case REQUEST_HEADLINES_SUCCESS:
-      console.log("i am running count**********************")
+      
       return Object.assign({}, state, {
         isPending: false,
         headlines: action.payload
