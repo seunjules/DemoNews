@@ -15,7 +15,6 @@ const initialStateNewsPage = {
 };
 
 export const openNewsPage = ((state = initialStateNewsPage, action = {}) => {
-  console.log("i am running")
   switch (action.type) {
     case OPEN_NEWS_ARTICLE:
       return Object.assign({}, state, { activeNewsArticle: action.payload });

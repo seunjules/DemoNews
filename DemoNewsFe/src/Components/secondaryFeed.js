@@ -9,13 +9,19 @@ const SecondaryFeed = props => {
 
   const secondaryFeed = headlines.articles.slice(5, 7).map((x, i) => {
     return (
+      <div className = "secondaryFeedItemContainer">
       <NewsCard
         src={x.urlToImage}
         title={x.title}
         content={x.content}
         url={x.url}
-        onOpenArticle = {() => onOpenArticle(x)}
+        publishedAt = {x.publishedAt}
+        source = {x.source}
+        onOpenArticle = {() => {
+          window.scrollTo(0, 0);
+          onOpenArticle(x)}}
       />
+      </div>
     );
   });
 

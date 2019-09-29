@@ -1,5 +1,13 @@
 .secondaryFeed {
-    width: 25vw;
-    padding: 0px;
+    width: 25%;
     overflow: wrap;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-height: 100%;
+    margin-left: 20px;
+}
+
+.secondaryFeedItemContainer {
+    height: 50%;
 }

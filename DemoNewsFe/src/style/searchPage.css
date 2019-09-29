@@ -1,0 +1,11 @@
+.searchFeed {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.searchFeedItem {
+    width: 30%;
+    height: 25vw;
+    margin: 20px;
+    background-color: white; 
+}

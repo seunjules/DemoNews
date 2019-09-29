@@ -9,13 +9,20 @@ const SelectFeed = props => {
 
   const selectFeed = headlines.articles.slice(1, 4).map((x, i) => {
     return (
+      <div className = "selectFeedItem">
       <NewsCard
         src={x.urlToImage}
         title={x.title}
         content={x.content}
         url={x.url}
-        onOpenArticle={() => onOpenArticle(x)}
+        publishedAt = {x.publishedAt}
+        source = {x.source}
+        description = {x.description}
+        onOpenArticle={() => {
+          window.scrollTo(0, 0);
+          onOpenArticle(x)}}
       />
+      </div>
     );
   });
 

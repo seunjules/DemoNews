@@ -3,20 +3,25 @@ import { Link } from "react-router-dom";
 import "../style/bannerCard.css";
 
 const BannerCard = props => {
-   
-
-    
-        return (
-    
-          <Link className="button" to="/NewsPage"><div className="banner"  onClick = {() => props.onOpenArticle(props)}>
-    
-            <img src={props.src} alt="Article Thumbnail" className="bannerImg" />
-            <div className = "textContainer"><h2>{props.title}</h2></div>
-            
-          </div></Link>
-        );
-      }
-    
-    
+  let date = new Date(props.publishedAt);
+  return (
+    <div className = "banner">
+    <Link className="" to="/NewsPage">
+      <div className="bannerImgContainer" onClick={() =>{ 
+        window.scrollTo(0, 0);
+        props.onOpenArticle(props)}}>
+        <img src={props.urlToImage} alt="Article Thumbnail" className="bannerImg" />
+        </div>
+        <div className="textContainer">
+          <h2 className = "bold">{props.title}</h2>
+          <p className = "bold">
+            {date.toDateString()} | {props.source.name}
+          </p>
+       
+      </div>
+    </Link>
+    </div>
+  );
+};
 
 export default BannerCard;

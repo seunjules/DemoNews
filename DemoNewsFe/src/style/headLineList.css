@@ -1,8 +1,8 @@
 .headlineLink {
     opacity: 1;
     border: solid #FAFAFA 1px;
+    color: #FAFAFA;
     padding: 5px;
-    color: #FAFAFA; 
 }
 
 h3 {
@@ -10,3 +10,21 @@ h3 {
     margin: 0px;
 }
 
+.headlineFeed {
+    overflow-y: scroll;
+    background: #4b4c4c;
+    /* width: 20%; */
+    height: 100%;
+    color: white;
+    margin-left: 20px;
+}
+
+.headlineFeedContainer {
+    width: 40%;
+    height: 80vh;
+}
+
+.headlineFeedContainer1 {
+    width: 20%;
+    height: 100%;
+}

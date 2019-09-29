@@ -3,6 +3,17 @@
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: center;
-  background-color: grey;
+  background-color: #F5F5F5;
+  margin-top: 100px;
   padding: 10px;
+  width: 95vw;
+  height: 55vh;
+  align-items: center;
+}
+
+.selectFeedItem {
+  width: 30%;
+  height: 95%;
+  margin: 20px;
+  background-color: white;
 }

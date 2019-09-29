@@ -6,6 +6,20 @@ import { Link } from 'react-router-dom'
 import "../style/nav.css";
 
 const Nav = props => {
+
+  if (props.displayMode === "alternate") {
+    return (
+      <div className="navContainer">
+      <div className=" flex fullHeight">
+        <header className="bg-black-90 fixed w-100 ph3 pv3 pv4-ns ph4-m ph5-l">
+          <nav className="f6 fw6 ttu tracked">
+          <Link to ="/" onClick = {() => window.scrollTo(0, 0)}> Front Page </Link>
+          </nav>
+        </header>
+      </div>
+    </div>
+    )
+  }
   return (
     <div className="navContainer">
       <div className=" flex fullHeight">
@@ -37,14 +51,6 @@ const Nav = props => {
             </a>
             <a
               className="link dim white dib mr3"
-              title="Sports"
-              name="Sports"
-              href="#sports"
-            >
-              Sports
-            </a>
-            <a
-              className="link dim white dib mr3"
               title="Health"
               name="Health"
               href="#health"
@@ -58,6 +64,14 @@ const Nav = props => {
               href="#entertainment"
             >
               Entertainment
+            </a>
+            <a
+              className="link dim white dib mr3"
+              title="Sports"
+              name="Sports"
+              href="#sports"
+            >
+              Sports
             </a>
           </nav>
           <input

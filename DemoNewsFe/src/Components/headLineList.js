@@ -4,29 +4,32 @@ import "../style/headLineList.css";
 
 const HeadLineList = props => {
   const { headlines, onOpenArticle } = props;
-  console.log(props, "props from headlinelist");
 
   if (!headlines) return null;
 
   const headlinesList = headlines.articles.map(x => {
     let date = new Date(x.publishedAt);
     return (
-      <Link
-        className="button"
-        to="/NewsPage"
-        onClick={() => props.onOpenArticle(x)}
-      >
-        <div className="headlineLink">
-          <h3>{x.title}</h3>
-          <p>
-            {date.toDateString()} | {x.source.name}
-          </p>
-        </div>
-      </Link>
+      <div>
+        <Link
+          className=""
+          to="/NewsPage"
+          href="#newsArticleTop"
+          onClick={() => {
+            window.scrollTo(0, 0);
+            onOpenArticle(x);
+          }}
+        >
+          <div className="headlineLink">
+            <h3>{x.title}</h3>
+            <p>
+              {date.toDateString()} | {x.source.name}
+            </p>
+          </div>
+        </Link>
+      </div>
     );
   });
-
-  console.log("props from headlinelist", headlinesList);
 
   return <div className="headLineList">{headlinesList}</div>;
 };
