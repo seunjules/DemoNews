@@ -1,5 +1,7 @@
 .secondaryFeed {
     width: 25%;
+    min-width: 500px;
+    height:55vh;
     overflow: wrap;
     display: flex;
     flex-direction: column;
@@ -10,4 +12,5 @@
 
 .secondaryFeedItemContainer {
     height: 50%;
+    min-width: 400px;
 }

@@ -13,7 +13,7 @@ const Nav = props => {
       <div className=" flex fullHeight">
         <header className="bg-black-90 fixed w-100 ph3 pv3 pv4-ns ph4-m ph5-l">
           <nav className="f6 fw6 ttu tracked">
-          <Link to ="/" onClick = {() => window.scrollTo(0, 0)}> Front Page </Link>
+          <Link to ="/" className = "link dim white dib mr3" onClick = {() => window.scrollTo(0, 0)}> Front Page </Link>
           </nav>
         </header>
       </div>

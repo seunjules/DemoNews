@@ -162,3 +162,7 @@ header {
   .lightPadding {
       padding: 3px 3px 3px 3px; 
   }
+
+  a {
+    color: white;
+  }

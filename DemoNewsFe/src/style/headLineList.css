@@ -3,6 +3,14 @@
     border: solid #FAFAFA 1px;
     color: #FAFAFA;
     padding: 5px;
+    height: 10vh;
+    opacity: 0.9;
+}
+
+.headlineLink:hover {
+    opacity: 1;
+    color: grey;
+    
 }
 
 h3 {
@@ -17,14 +25,25 @@ h3 {
     height: 100%;
     color: white;
     margin-left: 20px;
+    
 }
 
 .headlineFeedContainer {
-    width: 40%;
-    height: 80vh;
+    width: 30%;
+    height: 77vh;
+    margin-top: 200px;
 }
 
 .headlineFeedContainer1 {
     width: 20%;
-    height: 100%;
+    height: 55vh;
+    min-width: 400px;
 }
+
+.headlineFeed::-webkit-scrollbar {
+    display: none;
+  }
+
+  .headlineLink > p {
+      color: white;
+  }

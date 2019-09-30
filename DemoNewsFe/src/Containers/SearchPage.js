@@ -7,7 +7,7 @@ import Nav from "../Components/nav";
 import "../style/searchPage.css";
 
 const SearchPage = props => {
-  const { searchNewsResponse, onCloseSearch } = props;
+  const { searchNewsResponse } = props;
   const searchSelectFeed = searchNewsResponse.articles
     ? searchNewsResponse.articles.map((x, i) => {
         return (

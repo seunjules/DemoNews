@@ -15,10 +15,11 @@ const NewsCard = props => {
           />
         </div>
         <p className = "bold">{props.title}</p>
-        <p>{props.description}</p>
-        <p className = "bold">
+       <div className = "cardText"><p className = "noPadding">{props.description}</p></div>
+       <div className = "cardFooter"><p className = "bold">
           {date.toDateString()} | {props.source.name}
         </p>
+        </div>
       </div>
     </Link>
   );

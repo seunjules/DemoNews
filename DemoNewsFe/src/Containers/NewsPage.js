@@ -17,8 +17,8 @@ const NewsPage = props => {
     <Nav displayMode = "alternate"/>
     <div className = "newsArticleTop" id ="newsArticleTop">
     <div className="newsArticleContainer">
+    <h1>{activeNewsArticle.title}</h1>
       <div className = "newsImgContainer"><img src={activeNewsArticle.urlToImage} alt="Article Thumbnail" className="newsImg" /></div>
-      <h1>{activeNewsArticle.title}</h1>
       <p className = "articleText">{activeNewsArticle.url}</p>
       <p>{activeNewsArticle.content}
       <br /><br />
