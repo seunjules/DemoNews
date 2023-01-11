@@ -12,7 +12,7 @@
     "cors": "^2.8.5",
     "express": "^4.16.4",
     "file-system": "^2.2.2",
-    "knex": "^0.16.5",
+    "knex": "^2.4.0",
     "pg": "^7.10.0",
     "react": "^16.8.6",
     "react-bootstrap": "^1.0.0-beta.8",
